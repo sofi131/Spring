@@ -22,7 +22,7 @@ public class Demo1Application {
     @Bean
     public CommandLineRunner demo(UserRepository userRepository, RolRepository rolRepository, TaskRepository taskRepository) {
         return (args) -> {
-            //lo que vamos a recibir
+            //lo que vamos a recibir (USER)
 
 //            User user = new User();
 //            user.setUsername("prueba1");
@@ -32,17 +32,19 @@ public class Demo1Application {
 
             //task
 
-            Task task = new Task();
-            task.setIdtask(2);
-            task.setIduser(7);
-            task.setTitle("Hacer deberes de mates");
-            task.setDescription("Los deberes de inglés");
-            LocalDateTime createDate = LocalDateTime.now(); // Fecha actual
-            LocalDateTime deadline = LocalDateTime.of(2024, 3, 25, 12, 0);
-            task.setCreate_date(createDate);
-            task.setDeadline(deadline);
-            taskRepository.save(task);
-            //task.setStatus("Pendiente");
+//            Task task = new Task();
+//            task.setIdtask(2);
+//            task.setIduser(7);
+//            task.setTitle("Hacer deberes de lengua");
+//            task.setDescription("Los deberes de lengua");
+//            LocalDateTime createDate = LocalDateTime.now(); // Fecha actual
+//            LocalDateTime deadline = LocalDateTime.of(2024, 3, 25, 12, 0);
+//            task.setCreate_date(createDate);
+//            task.setDeadline(deadline);
+//            task.setStatus(Task.Status.PENDIENTE);
+//            taskRepository.save(task);
+
+
         };
     }
 }

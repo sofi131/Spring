@@ -1,9 +1,7 @@
 package com.example.demo;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
-
 
 @Entity
 @Table(name = "task")
@@ -15,8 +13,15 @@ public class Task {
     private String description;
     private LocalDateTime create_date;
     private LocalDateTime deadline;
-    private Boolean status;
+    private Status status; // Aquí se ha cambiado el tipo de dato a Status
     private int iduser;
+
+    // Enum para representar el estado de la tarea
+    public enum Status {
+        PENDIENTE,
+        EN_PROGRESO,
+        COMPLETADO
+    }
 
     public Task() {
     }
@@ -61,11 +66,11 @@ public class Task {
         this.deadline = deadline;
     }
 
-    public Boolean getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
