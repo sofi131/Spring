@@ -43,6 +43,14 @@ public class Demo1Application {
 //            task.setDeadline(deadline);
 //            task.setStatus(Task.Status.PENDIENTE);
 //            taskRepository.save(task);
+            User user = userRepository.findById(1).orElse(null);
+
+            if (user != null) {
+                // Aquí puedes realizar operaciones con el usuario encontrado
+                System.out.println("Usuario encontrado: " + user.getUsername());
+            } else {
+                System.out.println("Usuario no encontrado");
+            }
 
 
         };
