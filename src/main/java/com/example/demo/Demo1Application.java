@@ -43,14 +43,19 @@ public class Demo1Application {
 //            task.setDeadline(deadline);
 //            task.setStatus(Task.Status.PENDIENTE);
 //            taskRepository.save(task);
-            User user = userRepository.findById(1).orElse(null);
+//            User user = userRepository.findById(1).orElse(null);
+//
+//            if (user != null) {
+//                // Aquí puedes realizar operaciones con el usuario encontrado
+//                System.out.println("Usuario encontrado: " + user.getUsername());
+//            } else {
+//                System.out.println("Usuario no encontrado");
+//            }
+            Optional<User> user = userRepository.findById(66);
+            user.ifPresent(value -> System.out.println(value.toString()));
 
-            if (user != null) {
-                // Aquí puedes realizar operaciones con el usuario encontrado
-                System.out.println("Usuario encontrado: " + user.getUsername());
-            } else {
-                System.out.println("Usuario no encontrado");
-            }
+            User user1= (userRepository.findUserByUsername("Luis"));
+            System.out.println(user1.toString());
 
 
         };

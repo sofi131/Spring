@@ -3,22 +3,21 @@ package com.example.demo;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "rol")
 public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Integer getIdrol;
+    private Integer idrol;
     private String description;
 
     public Rol() {
     }
 
-    public Integer getGetIdrol() {
-        return getIdrol;
+    public Integer getIdrol() {
+        return idrol;
     }
 
-    public void setGetIdrol(Integer getIdrol) {
-        this.getIdrol = getIdrol;
+    public void setIdrol(Integer idrol) {
+        this.idrol = idrol;
     }
 
     public String getDescription() {
@@ -32,7 +31,7 @@ public class Rol {
     @Override
     public String toString() {
         return "Rol{" +
-                "getIdrol=" + getIdrol +
+                "idrol=" + idrol +
                 ", description='" + description + '\'' +
                 '}';
     }
