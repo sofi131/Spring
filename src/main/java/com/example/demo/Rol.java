@@ -28,4 +28,12 @@ public class Rol {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "Rol{" +
+                "getIdrol=" + getIdrol +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

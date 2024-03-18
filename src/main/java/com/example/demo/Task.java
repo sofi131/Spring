@@ -76,4 +76,17 @@ public class Task {
     public void setIduser(int iduser) {
         this.iduser = iduser;
     }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "idtask=" + idtask +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", create_date=" + create_date +
+                ", deadline=" + deadline +
+                ", status=" + status +
+                ", iduser=" + iduser +
+                '}';
+    }
 }

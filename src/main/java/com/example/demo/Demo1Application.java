@@ -20,33 +20,29 @@ public class Demo1Application {
 
     //crear USUARIO
     @Bean
-    public CommandLineRunner demo(UserRepository userRepository) {
+    public CommandLineRunner demo(UserRepository userRepository, RolRepository rolRepository, TaskRepository taskRepository) {
         return (args) -> {
             //lo que vamos a recibir
-            Optional<User> user=userRepository.findById(2);
-            System.out.println(user.get().toString());
+
 //            User user = new User();
 //            user.setUsername("prueba1");
 //            user.setPassword("1234");
 //            user.setIdrol(1);
 //            userRepository.save(user);
+
+            //task
+
+            Task task = new Task();
+            task.setIdtask(2);
+            task.setIduser(7);
+            task.setTitle("Hacer deberes de mates");
+            task.setDescription("Los deberes de inglés");
+            LocalDateTime createDate = LocalDateTime.now(); // Fecha actual
+            LocalDateTime deadline = LocalDateTime.of(2024, 3, 25, 12, 0);
+            task.setCreate_date(createDate);
+            task.setDeadline(deadline);
+            taskRepository.save(task);
+            //task.setStatus("Pendiente");
         };
-
     }
-    //crear rol
-    //crear TASK
-//    @Bean
-//    public CommandLineRunner demo(TaskRepository taskRepository) {
-//        return (args) -> {
-//            Task task = new Task();
-//            task.setTitle("Hacer deberes de inglés");
-//            task.setDescription("Los deberes de inglés");
-//            LocalDateTime createDate = LocalDateTime.now(); // Fecha actual
-//            LocalDateTime deadline = LocalDateTime.of(2024, 3, 25, 12, 0);
-//            taskRepository.save(task);
-//            //task.setStatus("Pendiente");
-//        };
-//
-//    }
-
 }
